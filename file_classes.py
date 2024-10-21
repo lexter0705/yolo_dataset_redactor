@@ -15,7 +15,6 @@ class FileFinder:
 
     def find_all_all_file_with_true_suffixes(self):
         all_file_names = os.listdir(self.__find_path)
-        print(all_file_names)
         for file_name in all_file_names:
             if self.__is_true_suffix(file_name):
                 self.__all_file_names.append(file_name)

@@ -12,26 +12,26 @@ class VideoSpliterator:
         self.__symbol = symbol
         self.__period = period
 
-    def save_frame(self):
-        self.__frames.append(self.__frame)
-
-    def save_all_to_png(self):
+    def __save_all_to_png(self):
         for frame_id in range(len(self.__frames)):
             path = f"{self.__images_path}/mini_{self.__symbol}_{frame_id}.png"
             cv2.imwrite(path, self.__frames[frame_id])
 
-    def start_frame_split_loop(self):
+    def __start_frame_split_loop(self):
         video = cv2.VideoCapture(self.__video_path)
         frame_checker = 0
         _, image = video.read()
         while image is not None:
-            print(image)
             image = cv2.resize(image, (640, 640))
             self.__frame = image
             if frame_checker % self.__period == 0:
-                self.save_frame()
+                self.__frames.append(self.__frame)
             frame_checker += 1
             _, image = video.read()
+
+    def save_all(self):
+        self.__start_frame_split_loop()
+        self.__save_all_to_png()
 
 
 class VideosSpliterator(FileFinder):
@@ -46,5 +46,4 @@ class VideosSpliterator(FileFinder):
         for i in range(len(self.__all_file_names)):
             name = self.__all_file_names[i]
             video_spliter = VideoSpliterator(self.__videos_path + name, self.__images_path, str(i), self.__period)
-            video_spliter.start_frame_split_loop()
-            video_spliter.save_all_to_png()
+            video_spliter.save_all()
