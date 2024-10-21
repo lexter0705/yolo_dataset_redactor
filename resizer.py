@@ -16,6 +16,6 @@ class ImagesResizer(FileFinder):
         cv2.imwrite(self.__save_path + image_name, image)
 
     def resize_all_images_in_path(self):
-        self.find_all_all_file_with_true_suffixes()
+        self.find_all_files_with_true_suffixes()
         for image_name in self.__all_file_names:
             self.resize_image(image_name)

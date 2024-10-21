@@ -13,7 +13,7 @@ class FileFinder:
         suffix = file_name_in_list[len(file_name_in_list) - 1]
         return suffix in self.__suffixes
 
-    def find_all_all_file_with_true_suffixes(self):
+    def find_all_files_with_true_suffixes(self):
         all_file_names = os.listdir(self.__find_path)
         for file_name in all_file_names:
             if self.__is_true_suffix(file_name):
