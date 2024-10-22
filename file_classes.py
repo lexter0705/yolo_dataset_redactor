@@ -19,6 +19,9 @@ class FileFinder:
             if self.__is_true_suffix(file_name):
                 self.__all_file_names.append(file_name)
 
+    def get_files_name(self) -> list[str]:
+        return self.__all_file_names
+
 
 class FileEditor:
     def __init__(self, file_path: str):

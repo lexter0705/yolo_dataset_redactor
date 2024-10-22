@@ -7,7 +7,6 @@ class VideoSpliterator:
     def __init__(self, video_path: str, images_path: str, symbol: str, period: int):
         self.__video_path = video_path
         self.__images_path = images_path
-        self.__frame: ndarray | None = None
         self.__frames: list[ndarray] = []
         self.__symbol = symbol
         self.__period = period
@@ -22,12 +21,10 @@ class VideoSpliterator:
         frame_checker = 0
         _, image = video.read()
         while image is not None:
-            image = cv2.resize(image, (640, 640))
-            self.__frame = image
-            if frame_checker % self.__period == 0:
-                self.__frames.append(self.__frame)
-            frame_checker += 1
             _, image = video.read()
+            if frame_checker % self.__period == 0:
+                self.__frames.append(image)
+            frame_checker += 1
 
     def save_all(self):
         self.__start_frame_split_loop()
@@ -43,7 +40,9 @@ class VideosSpliterator(FileFinder):
         self.__period = period
 
     def split(self):
-        for i in range(len(self.__all_file_names)):
-            name = self.__all_file_names[i]
+        self.find_all_files_with_true_suffixes()
+        files = self.get_files_name()
+        for i in range(len(files)):
+            name = files[i]
             video_spliter = VideoSpliterator(self.__videos_path + name, self.__images_path, str(i), self.__period)
             video_spliter.save_all()
