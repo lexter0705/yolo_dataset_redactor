@@ -1,7 +1,11 @@
-# Small library for yolo datasets
 
-## Examples:
-### yolo_dataset_redactor.spliterators
+# Yolo Dataset Redactor
+<img src="Logo.svg"/>
+
+- Small library for yolo datasets
+
+# Examples:
+# yolo_dataset_redactor.spliterators
 VideoSpliterator:
 ```python
 from yolo_dataset_redactor.spliterators import VideoSpliterator
@@ -30,7 +34,7 @@ spliterator = VideosSpliterator(suffixes, images_path, period)
 
 spliterator.split(videos_path)
 ```
-### yolo_dataset_redactor
+# yolo_dataset_redactor
 ImagesResizer:
 ```python
 from yolo_dataset_redactor import ImagesResizer
