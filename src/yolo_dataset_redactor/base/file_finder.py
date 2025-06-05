@@ -11,9 +11,6 @@ class FileFinder:
         return suffix in self.__suffixes
 
     def get_all_files_with_true_suffixes(self, path: str) -> list[str]:
-        files = []
         all_file_names = os.listdir(path)
-        for file_name in all_file_names:
-            if self.__is_true_suffix(file_name):
-                files.append(file_name)
+        files = [i for i in all_file_names if self.__is_true_suffix(i)]
         return files

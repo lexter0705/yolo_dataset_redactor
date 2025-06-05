@@ -1,4 +1,5 @@
-from yolo_dataset_redactor import spliterators
-from yolo_dataset_redactor.resizer import ImagesResizer
+from yolo_dataset_redactor import video
+from yolo_dataset_redactor import image
+from yolo_dataset_redactor import label
 
-__all__ = ["spliterators", "ImagesResizer"]
+__all__ = ["video", "image", "label"]
