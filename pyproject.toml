@@ -1,7 +1,7 @@
 [project]
 dependencies = ["opencv-python>=4.10"]
 name = "yolo_dataset_redactor"
-version = "0.1.0"
+version = "0.2.0"
 authors = [
  { name="lexter0705", email="lexter0705@gmail.com" },
 ]
