@@ -1,6 +1,6 @@
 
 # Yolo Dataset Redactor
-<img src="Logo.svg"/>
+<img src="https://raw.githubusercontent.com/lexter0705/yolo_dataset_redactor/refs/heads/master/Logo.svg"/>
 
 - Small library for yolo datasets
 
