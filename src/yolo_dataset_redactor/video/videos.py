@@ -14,5 +14,5 @@ class Videos(VideoWorker):
 
     def split(self, images_path: str, period: int, prefix: str = "png"):
         for name in self.__video_finder.get_all_files_with_true_suffixes(self.__videos_path):
-            video = Video(os.path.join(images_path, name))
+            video = Video(os.path.join(self.__videos_path, name))
             video.split(images_path, period, prefix)
