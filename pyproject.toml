@@ -12,3 +12,5 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+[project.urls]
+repository = 'https://github.com/lexter0705/yolo_dataset_redactor'
