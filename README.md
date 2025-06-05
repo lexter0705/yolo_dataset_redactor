@@ -3,6 +3,11 @@
 <img src="https://raw.githubusercontent.com/lexter0705/yolo_dataset_redactor/refs/heads/master/Logo.svg"/>
 
 - Small library for yolo datasets
+# Install
+
+```bash
+pip install yolo-dataset-redactor 
+```
 
 # Examples:
 ## yolo_dataset_redactor.video
